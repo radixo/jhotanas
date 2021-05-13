@@ -20,11 +20,12 @@ main(int argc, char *argv[])
 		"Seu arrombado, pq colega vc nao e, me fala o ",
 		"Tava pensando auqi, acho que tive uma ideia, me fala "
 	};
-	#define L_ENDS 3
+	#define L_ENDS 4
 	char *ends[] = {
 		"Eu não falo com bandeirantes",
 		"Se ta maluco? Que se ta arrumano?",
-		"Você não tem critério, cansei"
+		"Você não tem critério, cansei",
+		"Eu falo mas vc não me houve, faz um curso de linux"
 	};
 	char buff[512];
 	char *ans;
@@ -89,6 +90,7 @@ main(int argc, char *argv[])
 			printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
 		}
 		printf("%s\n", ans);
+		getch();
 	}
 }
 
