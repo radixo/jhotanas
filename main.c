@@ -18,9 +18,11 @@ main(int argc, char *argv[])
 		"Cara, de verdade, mas com sinceridade mesmo ",
 		"Me explica uma coisa que ta me deixando atonito, "
 	};
-	#define L_ENDS 1
+	#define L_ENDS 3
 	char *ends[] = {
-		"Eu não falo com bandeirantes"
+		"Eu não falo com bandeirantes",
+		"Se ta maluco? Que se ta arrumano?",
+		"Você não tem critério, cansei"
 	};
 	char buff[512];
 	char *ans;
@@ -59,7 +61,7 @@ main(int argc, char *argv[])
 					if (c != KEY) {
 						buff[pos - 1] = c;
 					} else {
-						buff[pos] = '\0';
+						buff[pos - 1] = '\0';
 						master = 0;
 					}
 					printf("%c", start[pos++]);
@@ -69,7 +71,17 @@ main(int argc, char *argv[])
 			}
 			fflush(stdout);
 		}
-		printf("\n\n%s\n", ans);
+		printf("\n\n");
+		char bars[] = {'/', '-', '\\', '|'};
+		for (int i = 0; i < 10; i++) {
+			printf("%c Deixa eu pensa :|", bars[i % sizeof(bars)]);
+			fflush(stdout);
+			usleep(500000);
+			printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
+			printf("                   ");
+			printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
+		}
+		printf("%s\n", ans);
 	}
 }
 
