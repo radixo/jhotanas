@@ -45,6 +45,7 @@ main(int argc, char *argv[])
 			printf("%c", start[pos++]);
 		} else if (c == (char)10) {
 			printf("\n");
+			continue;
 		} else {
 			printf("%c", c);
 		}
@@ -73,10 +74,10 @@ main(int argc, char *argv[])
 		}
 		printf("\n\n");
 		char bars[] = {'/', '-', '\\', '|'};
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 7; i++) {
 			printf("%c Deixa eu pensa :|", bars[i % sizeof(bars)]);
 			fflush(stdout);
-			usleep(500000);
+			usleep(250000);
 			printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
 			printf("                   ");
 			printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
