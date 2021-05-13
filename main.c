@@ -90,7 +90,7 @@ main(int argc, char *argv[])
 			}
 			fflush(stdout);
 		}
-		buff[pos - gap] = '\0';
+		buff[pos - gap - 1] = '\0';
 		printf("\n\n");
 		char bars[] = {'/', '-', '\\', '|'};
 		for (int i = 0; i < 7; i++) {
