@@ -29,7 +29,7 @@ main(int argc, char *argv[])
 	char buff[512];
 	char *ans;
 	char *start;
-	int pos;
+	int pos, gap;
 
 	// seed random with clock
 	srand(time(0));
@@ -41,6 +41,7 @@ main(int argc, char *argv[])
 		ans = ends[rand() % L_ENDS];
 		master = 0;
 		pos = 0;
+		gap = 1;
 		if ((c = getch()) == KEY) {
 			master = 1;
 			ans = buff;
@@ -56,16 +57,18 @@ main(int argc, char *argv[])
 		while ((c = getch()) != (char)10) {
 			if (c == (char)127) {
 				printf("\b \b");
-				if (master) {
+				if (master && pos > 0) {
 					pos--;
+					if (pos == 0) {
+						gap = 0;
+					}
 				}
 			} else {
 				if (master) {
-					if (c != KEY) {
-						buff[pos - 1] = c;
-					} else {
-						buff[pos - 1] = '\0';
+					if (c == KEY) {
 						master = 0;
+					} else {
+						buff[pos - gap] = c;
 					}
 					printf("%c", start[pos++]);
 				} else {
@@ -74,6 +77,7 @@ main(int argc, char *argv[])
 			}
 			fflush(stdout);
 		}
+		buff[pos - gap] = '\0';
 		printf("\n\n");
 		char bars[] = {'/', '-', '\\', '|'};
 		for (int i = 0; i < 7; i++) {
