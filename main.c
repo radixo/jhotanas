@@ -35,6 +35,18 @@ main(int argc, char *argv[])
 	// seed random with clock
 	srand(time(0));
 
+	// welcome screen
+	printf("\n");
+	printf("   (\\-\"```\"-/)\n");
+	printf("   //^\\   /^\\\\\n");
+	printf("  ;/ ~_\\ /_~ \\;\n");
+	printf("  |  / \\Y/ \\  |\n");
+	printf(" (,  \\0/ \\0/  ,)\n");
+	printf("  |   /   \\   |\n");
+	printf("  | (_\\._./_) |\n");
+	printf("   \\ \\v-.-v/ /\n");
+	printf("    \\ `===' /\n");
+	printf("     `-----`\n");
 	printf("\n* * J H O T A N Á S * *\n");
 	while (1) {
 		printf("\nVai... pergunta: \n");
