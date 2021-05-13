@@ -12,11 +12,13 @@ main(int argc, char *argv[])
 {
 	char c, master;
 	const char KEY = ';';
-	#define L_STARTS 3
+	#define L_STARTS 5
 	char *starts[] = {
 		"Jhotanas, se ta maluco? o que voce sabe sobre ",
 		"Cara, de verdade, mas com sinceridade mesmo ",
-		"Me explica uma coisa que ta me deixando atonito, "
+		"Me explica uma coisa que ta me deixando atonito, ",
+		"Seu arrombado, pq colega vc nao e, me fala o ",
+		"Tava pensando auqi, acho que tive uma ideia, me fala "
 	};
 	#define L_ENDS 3
 	char *ends[] = {
